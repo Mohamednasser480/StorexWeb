@@ -9,7 +9,10 @@ const createProfile = async (req, res) => {
       data: newUser
     });
   } catch (error) {
-    res.status(400).json(error.message);
+    res.status(400).json({
+      success:false,
+      error:error.message
+    });
   }
 }
 
@@ -21,7 +24,10 @@ const getUsers = async (req,res)=>{
       data:users
     });
   }catch (error){
-    res.status(400).json(error.message);
+    res.status(400).json({
+      success:false,
+      error:error.message
+    });
   }
 }
 

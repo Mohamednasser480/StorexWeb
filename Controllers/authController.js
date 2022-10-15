@@ -13,7 +13,10 @@ const login = async (req, res) => {
       data: user
     });
   } catch (error) {
-    res.status(400).json(error.message);
+    res.status(400).json({
+      success:false,
+      error:error.message
+    });
   }
 }
 module.exports = {
